@@ -1,6 +1,6 @@
 {
   "name": "ysi-ui-kit",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "react-dom": "*"
   },
   "files": [
-    "/dist"
+    "dist"
   ],
   "dependencies": {
     "classnames": "^2.3.1"

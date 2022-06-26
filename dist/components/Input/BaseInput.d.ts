@@ -1,5 +1,4 @@
 import { ChangeEvent, InputHTMLAttributes } from 'react';
-import './styles.scss';
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: any;
     error?: boolean;

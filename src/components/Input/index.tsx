@@ -1,6 +1,5 @@
-import AdornmentInput, {AdornmentInputProps} from './AdornmentInput'
+import AdornmentInput, { AdornmentInputProps } from './AdornmentInput'
 import BaseInput from './BaseInput'
-import './styles.scss'
 
 export interface InputProps extends AdornmentInputProps {}
 

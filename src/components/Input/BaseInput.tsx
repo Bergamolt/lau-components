@@ -1,7 +1,8 @@
 import cx from 'classnames'
-import {ChangeEvent, InputHTMLAttributes, useContext, useState} from 'react'
-import {UiThemeContext} from '../../context/themeContext'
-import './styles.scss'
+import { ChangeEvent, InputHTMLAttributes, useContext, useState } from 'react'
+
+import { UiThemeContext } from '../../context/themeContext'
+import classes from './styles.module.scss'
 
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: any
@@ -35,13 +36,13 @@ function Input(props: BaseInputProps) {
   const componentTheme = theme || isDarkTheme ? 'dark' : 'light'
 
   return (
-    <div className={cx('UiInput_root', componentTheme, className)}>
+    <div className={cx(classes.root, componentTheme, className)}>
       <div
         className={cx(
-          'UiInput_base',
-          isFocus && 'UiInput_focus',
-          error && 'UiInput_error',
-          variant ? `UiInput_${variant}` : 'UiInput_outlined'
+          classes.base,
+          isFocus && classes.focus,
+          error && classes.error,
+          classes[variant ? variant : 'underlined']
         )}
       >
         <input
@@ -56,12 +57,12 @@ function Input(props: BaseInputProps) {
             setFocus(true)
             onFocus?.(e)
           }}
-          className={cx(props.small && 'UiInput_smail')}
+          className={cx(props.small && classes.small)}
         />
       </div>
 
       {helperText && (
-        <span className={cx('UiInput_helper-text', classHelperText)}>
+        <span className={cx(classes.helperText, classHelperText)}>
           {helperText}
         </span>
       )}

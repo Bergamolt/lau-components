@@ -54,6 +54,9 @@ module.exports = {
               },
             },
           },
+          {
+            loader: 'sass-loader',
+          },
         ],
         include: /\.module\.(css|s[ac]ss)$/,
       },

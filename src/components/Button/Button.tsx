@@ -1,11 +1,24 @@
-import classes from './styles.module.scss'
+import classes from './Button.module.css'
 
-export interface ButtonProps {
-  label: string
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode
+  className?: string
+  variant?: 'filled' | 'outlined' | 'text'
 }
 
 const Button = (props: ButtonProps) => {
-  return <button className={classes.root}>{props.label}</button>
+  const {children, className, variant, ...rest} = props
+
+  const classesButton = [className, classes[variant || 'filled']].filter(
+    (cn) => cn
+  )
+
+  return (
+    <button className={[classes.root, ...classesButton].join(' ')} {...rest}>
+      {children}
+    </button>
+  )
 }
 
 export default Button

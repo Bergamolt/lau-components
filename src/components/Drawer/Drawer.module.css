@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lau-color-white, #fff);
+  border: 1px solid #e1e3e1;
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  height: 100%;
+  padding: 10px 0;
+}

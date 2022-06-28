@@ -1,8 +1,7 @@
-import cx from 'classnames'
-import { ChangeEvent, InputHTMLAttributes, useContext, useState } from 'react'
+import {ChangeEvent, InputHTMLAttributes, useState} from 'react'
 
-import { UiThemeContext } from '../../context/themeContext'
 import classes from './styles.module.scss'
+import cx from 'classnames'
 
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: any
@@ -31,9 +30,8 @@ function Input(props: BaseInputProps) {
   } = props
 
   const [isFocus, setFocus] = useState(false)
-  const {isDarkTheme} = useContext(UiThemeContext)
 
-  const componentTheme = theme || isDarkTheme ? 'dark' : 'light'
+  const componentTheme = theme ? theme : 'light'
 
   return (
     <div className={cx(classes.root, componentTheme, className)}>

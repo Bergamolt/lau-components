@@ -1,0 +1,18 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+}
+
+/* Variables */
+
+:root {
+  --lau-color-white: #fff;
+  --lau-primary-color: #0b57d0;
+  --lau-app-bar-color: #f2f6fc;
+}

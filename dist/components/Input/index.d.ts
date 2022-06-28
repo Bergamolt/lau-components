@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { AdornmentInputProps } from './AdornmentInput';
 export interface InputProps extends AdornmentInputProps {
 }

@@ -7,7 +7,7 @@ export interface AppBarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const AppBar = (props: AppBarProps) => {
-  const {children, className, fixed, ...rest} = props
+  const { children, className, fixed, ...rest } = props
 
   const classesAppBar = [className, fixed && classes.fixed].filter((cn) => cn)
 

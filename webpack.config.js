@@ -31,8 +31,8 @@ module.exports = {
             options: {
               attributes: {
                 'data-style': 'lau-css',
-              }
-            }
+              },
+            },
           },
           {
             loader: 'css-loader',

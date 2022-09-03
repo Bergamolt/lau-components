@@ -1,7 +1,7 @@
-import {ChangeEvent, InputHTMLAttributes, useState} from 'react'
+import { ChangeEvent, InputHTMLAttributes, useState } from 'react'
 
 import classes from './styles.module.scss'
-import cx from 'classnames'
+import cn from 'utils'
 
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: any
@@ -16,27 +16,16 @@ export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Input(props: BaseInputProps) {
-  const {
-    theme,
-    className,
-    variant,
-    error,
-    helperText,
-    classHelperText,
-    pattern,
-    onBlur,
-    onFocus,
-    ...rest
-  } = props
+  const { theme, className, variant, error, helperText, classHelperText, pattern, onBlur, onFocus, ...rest } = props
 
   const [isFocus, setFocus] = useState(false)
 
   const componentTheme = theme ? theme : 'light'
 
   return (
-    <div className={cx(classes.root, componentTheme, className)}>
+    <div className={cn(classes.root, componentTheme, className)}>
       <div
-        className={cx(
+        className={cn(
           classes.base,
           isFocus && classes.focus,
           error && classes.error,
@@ -55,15 +44,11 @@ function Input(props: BaseInputProps) {
             setFocus(true)
             onFocus?.(e)
           }}
-          className={cx(props.small && classes.small)}
+          className={cn(props.small && classes.small)}
         />
       </div>
 
-      {helperText && (
-        <span className={cx(classes.helperText, classHelperText)}>
-          {helperText}
-        </span>
-      )}
+      {helperText && <span className={cn(classes.helperText, classHelperText)}>{helperText}</span>}
     </div>
   )
 }

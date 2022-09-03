@@ -8,7 +8,11 @@
     "lib": ["ES2015", "DOM", "ESNext.AsyncIterable"],
     "outDir": "./dist/",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "./src",
+    "paths": {
+      "utils/*": ["utils.ts"],
+    }
   },
   "include": ["src", "declarations.d.ts"],
   "exclude": ["node_modules", "dist", "./src/stories"]

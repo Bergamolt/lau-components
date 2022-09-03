@@ -1,8 +1,10 @@
 .root {
+  /* position: absolute; */
   display: flex;
   flex-direction: column;
-  background-color: var(--lau-color-white, #fff);
-  border: 1px solid #e1e3e1;
+  min-width: 187px;
+  background-color: var(--lau-secondary-color, #f2f6fc);
+  /* border: 1px solid #e1e3e1; */
   border-left: none;
   border-top: none;
   border-bottom: none;

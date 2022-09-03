@@ -1,4 +1,4 @@
-import cx from 'classnames'
+import cn from 'utils'
 import { ReactNode } from 'react'
 
 import Input, { BaseInputProps } from './BaseInput'
@@ -10,21 +10,13 @@ export interface AdornmentInputProps extends BaseInputProps {
 }
 
 function AdornmentInput(props: AdornmentInputProps) {
-  const {startAdornment, endAdornment, ...rest} = props
+  const { startAdornment, endAdornment, ...rest } = props
 
   return (
-    <div className={cx(classes.adornmentRoot, props.small && classes.small)}>
-      {startAdornment && (
-        <div className={cx(classes.adornment, classes.adornmentStart)}>
-          {startAdornment}
-        </div>
-      )}
+    <div className={cn(classes.adornmentRoot, props.small && classes.small)}>
+      {startAdornment && <div className={cn(classes.adornment, classes.adornmentStart)}>{startAdornment}</div>}
       <Input {...rest} />
-      {endAdornment && (
-        <div className={cx(classes.adornment, classes.adornmentEnd)}>
-          {endAdornment}
-        </div>
-      )}
+      {endAdornment && <div className={cn(classes.adornment, classes.adornmentEnd)}>{endAdornment}</div>}
     </div>
   )
 }

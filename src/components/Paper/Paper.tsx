@@ -1,11 +1,9 @@
 import cn from 'utils'
-import classes from './Drawer.module.css'
+import classes from './Paper.module.css'
 
 export interface DrawerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode
   className?: string
-  open?: boolean
-  onClose?: () => void
 }
 
 const Drawer = (props: DrawerProps) => {

@@ -1,5 +1,5 @@
-It's a simple UI component library, components are light as air and easy to use.
+It's a simple UI component library for React, components are light as air and easy to use.
 
 <pre>
-  <code>npm i lau-components</code>
+  <code>npm i lau-ui</code>
 </pre>

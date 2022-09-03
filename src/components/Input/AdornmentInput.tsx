@@ -1,4 +1,4 @@
-import cn from 'utils'
+import cn from '../../helpers'
 import { ReactNode } from 'react'
 
 import Input, { BaseInputProps } from './BaseInput'

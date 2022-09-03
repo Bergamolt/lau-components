@@ -1,7 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, useState } from 'react'
 
 import classes from './styles.module.scss'
-import cn from 'utils'
+import cn from '../../helpers'
 
 export interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: any

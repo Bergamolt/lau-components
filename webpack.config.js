@@ -1,9 +1,5 @@
 const path = require('path')
 
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
-// const isDev = process.env.NODE_ENV === 'development'
-
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
@@ -20,7 +16,6 @@ module.exports = {
   externals: {
     react: 'react',
   },
-  // plugins: isDev ? [] : [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -29,8 +24,25 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
+              injectType: 'singletonStyleTag',
               attributes: {
-                'data-style': 'lau-css',
+                'data-style': 'lau-ui-classes',
+              },
+              insert: function insertAtTop(element) {
+                var parent = document.querySelector('head')
+                // eslint-disable-next-line no-underscore-dangle
+                var lastInsertedElement = globalThis._lastElementInsertedByStyleLoader
+
+                if (!lastInsertedElement) {
+                  parent.insertBefore(element, parent.firstChild)
+                } else if (lastInsertedElement.nextSibling) {
+                  parent.insertBefore(element, lastInsertedElement.nextSibling)
+                } else {
+                  parent.appendChild(element)
+                }
+
+                // eslint-disable-next-line no-underscore-dangle
+                window._lastElementInsertedByStyleLoader = element
               },
             },
           },

@@ -1,4 +1,4 @@
-import cn from 'utils'
+import cn from '../../helpers'
 import classes from './Paper.module.css'
 
 export interface DrawerProps extends React.HTMLAttributes<HTMLDivElement> {

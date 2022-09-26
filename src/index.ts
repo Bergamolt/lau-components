@@ -1,5 +1,5 @@
 // Global styles
-import '../styles/index.scss'
+import '../styles/index.css'
 
 import AppBar from './AppBar'
 import Button from './Button'
